@@ -1,0 +1,30 @@
+.button{
+    font-size: 32px !important;
+    font-weight: bold !important;
+    width:fit-content;
+    height:30px;
+     margin-left:auto !important;
+     margin-right:auto !important;
+}
+
+
+.card-content{
+    width:fit-content ;
+     margin-left:auto !important;
+     margin-right:auto !important;
+}
+
+.container{
+    height: 15% !important;
+    width: 25% !important;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card{
+    border:1px solid black !important;
+    border-radius: 0 !important;
+}
+
+.MuiCardContent-root{
+    padding: 0 !important;
+}
