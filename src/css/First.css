@@ -16,7 +16,7 @@
 
 .container{
     height: 15% !important;
-    width: 25% !important;
+    width: 100%;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -25,6 +25,22 @@
     border-radius: 0 !important;
 }
 
+.card:hover {
+    background: #ddd;
+    -webkit-transition: background 0.5s;
+    cursor: pointer;
+}
+
 .MuiCardContent-root{
     padding: 0 !important;
+}
+
+.super-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    font-size: 30px;
+    text-transform: uppercase;
 }

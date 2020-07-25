@@ -1,4 +1,4 @@
-const list = [
+ const list = [
     "SUPERMAN",
     "THOR",
     "ROBIN",
@@ -17,7 +17,7 @@ const list = [
     "PUNISHER"
 ]
 
-const dataMapToNumber =[
+ const dataMapToNumber =[
             {"2":["A","B","C"]},
             {"3":["D","E","F"]},
             {"4":["G","H","I"]},

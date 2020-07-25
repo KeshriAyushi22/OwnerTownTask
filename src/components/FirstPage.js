@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Grid, Typography, CardActionArea, CardActions, CardContent, Button } from "@material-ui/core"
+import { Card, Grid, Typography, Paper, TextField, CardActions, CardContent, Button } from "@material-ui/core"
 import "../css/First.css";
 import { dataList } from "../services/util.js"
 import { getHeroNames } from "../services/react_api.js"
@@ -8,7 +8,8 @@ class FirstPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            code: ""
+            code: "",
+            response:"Response"
         }
     }
 
@@ -55,18 +56,38 @@ class FirstPage extends Component {
 
         return (
             <React.Fragment>
-                <Grid container className="container">
-                    {Object.keys(dataList).map(key => <Grid item sm={4} md={4} xs={4}>
-                        <Card className="card" >
-                            <CardActions>
-                                <Button onClick={() => this.onClickHandler(key)} className="button" >{key}</Button>
-                            </CardActions>
-                            <CardContent>
-                                <Typography color="textSecondary" variant="h6" className="card-content">{dataList[key]}</Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>)}
-                </Grid>
+                <div style={{width: '500px', marginLeft: 'auto', marginRight: 'auto', marginTop: '100px'}}>
+                    <TextField
+                        style={{width: '100%', marginBottom: '10px'}}
+                        id="outlined-number"
+                        label="Secret Code"
+                        value={this.state.code}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        InputProps={{
+                            readOnly: true,
+                          }}
+                        variant="outlined"
+                    />
+                  <Grid container className="container">
+                        {dataList.map(key => <Grid item sm={4} md={4} xs={4}>
+                            <Card className="card" onClick={() => this.onClickHandler(Object.keys(key)[0])}>
+                                <CardActions>
+                                    <span className="button" >{Object.keys(key)[0]}</span>
+                                </CardActions>
+                                <CardContent>
+                                    <Typography color="textSecondary" variant="h6" className="card-content">{Object.values(key)[0]}</Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>)}
+                    </Grid>
+                    <Paper elevation={3} style={{width: '100%', height: '100px', marginTop: '30px'}}>
+                        <div className="super-hero">
+                        <span>{this.state.response}</span>
+                        </div>
+                    </Paper>
+                </div>
             </React.Fragment>
         )
     }
