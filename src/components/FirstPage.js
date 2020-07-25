@@ -9,7 +9,7 @@ class FirstPage extends Component {
         super(props);
         this.state = {
             code: "",
-            response:"Response"
+            response:""
         }
     }
 
@@ -30,8 +30,14 @@ class FirstPage extends Component {
 
     submitData = (data) => {
         //send to nodejs
-       // console.log(data)
-        getHeroNames(data)
+      
+      getHeroNames(data,(res)=>{ 
+          if(res){
+            this.setState({response:res})
+          }
+    })
+           
+            
     }
 
     onClickHandler = (item) => {

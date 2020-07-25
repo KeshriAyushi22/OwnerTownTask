@@ -1,5 +1,5 @@
 const url= "http://localhost:3000/"
-export const getHeroNames=(data)=>{
+export const getHeroNames=(data,cb)=>{
     const apiUrl =url+"getHeroName"
     const requestData = {
         method: 'POST',
@@ -8,6 +8,6 @@ export const getHeroNames=(data)=>{
     };
     fetch(apiUrl,requestData)
     .then(response=> response.json())
-    .then(data=>console.log(data))
+    .then(output=>cb(output))
 
 }

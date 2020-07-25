@@ -31,7 +31,7 @@ exports.getNames = (req, res) => {
                        if(eachData[i]===eachAlphabet){
                            
                             output=output+eachAlphabet  
-                            console.log(output) 
+                            //console.log(output) 
                         }
                    })
                })
