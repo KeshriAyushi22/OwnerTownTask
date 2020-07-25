@@ -25,6 +25,7 @@ class FirstPage extends Component {
 
         } else {
             console.log("error") //any false
+            this.setState({response:"Not Valid, Enter <Zero> <Space> code"})
         }
     }
 
@@ -33,7 +34,7 @@ class FirstPage extends Component {
       
       getHeroNames(data,(res)=>{ 
           if(res){
-            this.setState({response:res})
+            this.setState({response:res.message})
           }
     })
            
@@ -53,7 +54,7 @@ class FirstPage extends Component {
                 newData = oldData + item;
             }
 
-            this.setState({ code: newData })
+            this.setState({ code: newData, response:"" })
         }
     }
 
