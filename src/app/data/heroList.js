@@ -1,4 +1,4 @@
- const list = [
+ exports.list = [
     "SUPERMAN",
     "THOR",
     "ROBIN",
@@ -17,7 +17,7 @@
     "PUNISHER"
 ]
 
- const dataMapToNumber =[
+ exports.dataMapToNumber =[
             {"2":["A","B","C"]},
             {"3":["D","E","F"]},
             {"4":["G","H","I"]},
