@@ -1,3 +1,5 @@
+import {list,dataMapToNumber} from "../data/heroList.js"
+
 
 exports.getNames = (req, res) => {
     // Validate request
@@ -6,9 +8,32 @@ exports.getNames = (req, res) => {
             message: "Content can not be empty!"
         });
     }else{
-        console.log(req.body)
-        let code = req.body.code.substr(2,req.body.code.length)
-        console.log(code)
+        let code = req.body.code.substr(2,req.body.code.length) //fetching the code
+        let reqArray = list.filter(item=>item.length===code.length)  //filtering the data
+        console.log(reqArray)
+        if(reqArray.length!=0){
+
+            //map the number and fetch the exact value from array.
+             for(let i=0;i<code.length;i++){
+                let ch = code.charAt(i)
+                dataMapToNumber.forEach(item=>{
+                    Object.keys(item).filter(key=>{
+                        if(key==ch){
+                                
+                                    //give the value and match it with the reqArray we obtained.
+                                let value = item[key];  //this value will be each alphabet which will be compared with reqArray
+                                
+                            }
+                    })
+                })
+             }
+
+        }else{
+            res.status(200).send({
+                message: "Data Not Found !"
+            });
+            
+        }
     }
 
     //decode the code and then return the name.
