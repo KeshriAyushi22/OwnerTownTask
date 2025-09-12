@@ -19,7 +19,7 @@
     "react-dom": "^16.9.0",
     "react-google-maps": "9.4.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^5.0.1",
     "react-simple-image-slider": "^1.0.4",
     "recompose": "0.26.0",
     "body-parser": "^1.19.0",
